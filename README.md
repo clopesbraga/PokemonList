@@ -1,4 +1,5 @@
-## PokeDex
+![Pokédex_logo](https://github.com/clopesbraga/PokemonList/assets/58059669/ef3fafdb-6bc1-436c-bdcd-7c14f6e7a7a3)
+
 
 - Aplicativo idealizado para treinamento de uso da API utilizando Kotlin junto com Jetpack Compose.
   O app fornece a lista dos pokemons existentes desde a temporada clássica até as atuais.
