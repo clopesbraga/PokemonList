@@ -1,6 +1,6 @@
 ## PokeDex
 
-- Aplicativo solicitado pela equipe Agile Content referente ao processo seletivo.
+- Aplicativo idealizado para treinamento de uso da API utilizando Kotlin junto com Jetpack Compose.
   O app fornece a lista dos pokemons existentes desde a temporada clássica até as atuais.
 
 ## Tecnoloagias que serão utilizadas
