@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 class PokemonsListViewModel : ViewModel() {
 
     companion object {
-        private const val LIMIT = 150
+        private const val LIMIT = 15
     }
 
     private val _pokemons = MutableStateFlow<List<PokemonListModel>>(emptyList())

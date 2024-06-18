@@ -30,8 +30,12 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import androidx.navigation.navOptions
 import coil.compose.rememberAsyncImagePainter
 import com.clopesbraga.pokemonlist.model.PokemonListModel
 import com.clopesbraga.pokemonlist.ui.screens.PokemonListScreen
@@ -82,19 +86,25 @@ fun SearchBar(
 }
 
 @Composable
-fun NavHostPages(
-    viewModel: PokemonsListViewModel,
-    navController: NavHostController
-) {
+fun Navigation() {
+
+    val navController = rememberNavController()
     NavHost(
         navController = navController,
         startDestination = "main"
     ) {
-        composable("main") { PokemonListScreen(viewModel, navController) }
-        composable("details/{image}") { backStackEntry ->
+        composable("main") {
+            PokemonListScreen(navController)
+        }
+        composable("details/{image}",
+            arguments = listOf(navArgument("image") {
+                type = NavType.StringType
+            })
+        ) { backStackEntry ->
             val image = backStackEntry.arguments?.getString("image")
             PokemonDetailScreen(image ?: "")
         }
+
     }
 
 }
@@ -116,7 +126,9 @@ fun BoxItems(
                 .weight(1f)
                 .clickable {
                     val image = extractFileNameFromUrl(item.sprites.front_default)
-                    navController.navigate("details/$image")
+                    navController.navigate("details/$image", navOptions = navOptions {
+                        popUpTo(navController.graph.startDestinationId)
+                    })
                 },
         ) {
             Row {

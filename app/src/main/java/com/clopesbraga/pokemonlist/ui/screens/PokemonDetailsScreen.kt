@@ -23,16 +23,17 @@ fun PokemonDetailScreen(image: String) {
 
             ImageFromUrl(baseurl + image)
 
+            Text(
+                text = "Tela Detalhes pokemons",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(10.dp),
+                textAlign = TextAlign.Justify,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Light
+            )
+
         }
-        Text(
-            text = "Tela Detalhes pokemons",
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(10.dp),
-            textAlign = TextAlign.Justify,
-            fontSize = 18.sp,
-            fontWeight = FontWeight.Light
-        )
 
 
     }

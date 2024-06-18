@@ -35,6 +35,7 @@ import com.clopesbraga.pokemonlist.R
 import com.clopesbraga.pokemonlist.model.PokemonListModel
 import com.clopesbraga.pokemonlist.ui.components.BoxItems
 import com.clopesbraga.pokemonlist.ui.components.SearchBar
+import org.koin.androidx.compose.koinViewModel
 
 
 private const val ITEMS = 10
@@ -44,11 +45,12 @@ private const val BLUE = 0
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun PokemonListScreen(viewModel: PokemonsListViewModel, navController: NavHostController) {
+fun PokemonListScreen(navController: NavHostController) {
 
     val shouldShowBottomBar = remember { mutableStateOf(true) }
     var searchText by remember { mutableStateOf("") }
 
+    val viewModel= koinViewModel<PokemonsListViewModel>()
     val pokemonList: List<PokemonListModel> by viewModel.pokemonsListState.collectAsState()
 
     val itemsPerPage = ITEMS
