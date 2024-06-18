@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PokeDex</string>
+    <string name="previus_page">Previus</string>
+    <string name="next_page">Next</string>
+    <string name="hint_search">Search a Pokemon...</string>
+    <string name="tag_request_erro">ERRO REQUEST</string>"
+    <string name="unkwon_request_erro">Unkwon Error</string>"
+</resources>
