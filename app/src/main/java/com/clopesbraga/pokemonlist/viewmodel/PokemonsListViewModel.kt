@@ -14,14 +14,14 @@ import kotlinx.coroutines.launch
 class PokemonsListViewModel : ViewModel() {
 
     companion object {
-        private const val LIMIT = 15
+        private const val LIMIT = 60
     }
 
     private val _pokemons = MutableStateFlow<List<PokemonListModel>>(emptyList())
     val pokemonsListState = _pokemons.asStateFlow()
 
     fun pagination(page: Int) {
-        val offset = page * LIMIT
+        val offset = page
         viewModelScope.launch {
             try {
                 val pokemonAPI = PokemonsApi.createService(PokemonsRequestEndpoints::class.java)
