@@ -24,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -31,6 +32,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
+import com.clopesbraga.pokemonlist.R
 import com.clopesbraga.pokemonlist.ui.components.SkillsBar
 
 val baseurl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
@@ -86,9 +88,7 @@ fun PokemonDetailScreen(
 
             Row{
                 Text(
-                    text="Texto feito para mostrar a descricao dos pokemons" +
-                            " onde irei colocar também as suas devidas habilidades" +
-                            "como força, velocidade, defesa e resistencia.",
+                    text= stringResource(R.string.description_text),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(10.dp),
