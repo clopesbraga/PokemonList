@@ -5,4 +5,5 @@
     <string name="hint_search">Search a Pokemon...</string>
     <string name="tag_request_erro">ERRO REQUEST</string>"
     <string name="unkwon_request_erro">Unkwon Error</string>"
+    <string name="circular_shape">circular progress value"</string>
 </resources>

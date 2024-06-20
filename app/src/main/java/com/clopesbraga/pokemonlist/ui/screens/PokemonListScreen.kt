@@ -38,7 +38,7 @@ import com.clopesbraga.pokemonlist.ui.components.SearchBar
 import org.koin.androidx.compose.koinViewModel
 
 
-private const val ITEMS = 10
+private const val ITEMS = 15
 private const val RED =  255
 private const val GREEN = 191
 private const val BLUE = 0
@@ -55,10 +55,10 @@ fun PokemonListScreen(navController: NavHostController) {
 
     val itemsPerPage = ITEMS
     var currentPage by remember { mutableStateOf(0) }
-    viewModel.pagination(currentPage)
+    viewModel.pagination(currentPage * itemsPerPage)
 
     val items: List<PokemonListModel> = pokemonList.map { pokemon ->
-        PokemonListModel(pokemon.id, pokemon.name, pokemon.sprites)
+        PokemonListModel(pokemon.id, pokemon.name, pokemon.sprites, pokemon.stats)
     }
 
     val pokemonlistFiltered = if (searchText.isBlank()) {
