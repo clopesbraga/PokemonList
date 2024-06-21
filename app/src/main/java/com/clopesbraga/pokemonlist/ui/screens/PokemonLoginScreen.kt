@@ -70,7 +70,7 @@ fun SaveLoginButton(navController: NavHostController, username: String, password
     OutlinedButton(onClick = {
 
         if (username.isNotEmpty() && password.isNotEmpty()) {
-            navController.navigate("main")
+            navController.navigate("list")
         }
 
     }) {

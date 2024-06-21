@@ -52,7 +52,9 @@ fun PokemonDetailScreen(
             TopAppBar(
                 title = { Text("Pokemon Details") },
                 navigationIcon = {
-                    IconButton(onClick = { navController.popBackStack() }) {
+                    IconButton(onClick = {
+                        navController.navigate("list")
+                    }) {
                         Icon(Icons.Filled.ArrowBack, "Back")
                     }
                 }

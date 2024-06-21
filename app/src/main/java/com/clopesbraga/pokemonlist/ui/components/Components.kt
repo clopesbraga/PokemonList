@@ -37,7 +37,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
-import androidx.navigation.Navigator
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -97,16 +96,15 @@ fun Navigation() {
 
     val navController = rememberNavController()
     NavHost(
-        navController = navController,
-        startDestination = "main"
-    ) {
-        composable("login") {
-            PokemonLoginScreen(navController)
-        }
-        composable("main") {
+        navController = navController, startDestination = "login")
+    {
+        composable("list") {
             PokemonListScreen(navController)
         }
 
+        composable("login") {
+            PokemonLoginScreen(navController)
+        }
         composable(
             "details/{image}/hp/{hp}/attack/{attack}/defense/{defense}",
             arguments = listOf(
