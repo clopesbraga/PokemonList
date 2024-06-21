@@ -4,6 +4,9 @@
 - Aplicativo idealizado para treinamento de uso da API utilizando Kotlin junto com Jetpack Compose.
   O app fornece a lista dos pokemons existentes desde a temporada clássica até as atuais.
 
+  Link da API: https://pokeapi.co/docs/v2
+
+
 ## Tecnoloagias que serão utilizadas
 <!--ts-->
    * Frameworks
@@ -19,7 +22,7 @@
 
 - [x] Listagem dos Pokemons
 - [x] Campo de busca de Pokemons
-- [ ] Tela de informações detalhadas de cada pokemon.
+- [x] Tela de informações detalhadas de cada pokemon.
 
 ## Demonstração da aplicação
 
