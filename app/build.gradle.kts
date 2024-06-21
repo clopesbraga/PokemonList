@@ -61,6 +61,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.generativeai)
+    implementation(libs.androidx.media3.common)
 
 
     testImplementation(libs.junit)
